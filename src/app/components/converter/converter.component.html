@@ -1,0 +1,50 @@
+<article class="converter">
+  <mat-form-field appearance="fill" class="converter__box">
+    <input
+      matInput
+      type="number"
+      [value]="value1"
+      (keyup)="getValue($event.target)"
+      (change)="getValue($event.target)"
+      [disabled]="rate1 === 0"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="converter__box">
+    <mat-label>Choose currency</mat-label>
+    <mat-select (selectionChange)="currency($event)">
+      <mat-option [value]="currency.rate" *ngFor="let currency of currencies">
+        {{ currency.txt }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</article>
+<span
+  class="material-icons converter__icon"
+  style="
+    color: rgb(59, 66, 53);
+    font-size: 40px;
+    background-clip: text;
+    margin-bottom: 20px;
+  "
+  >compare_arrows</span
+>
+<article class="converter">
+  <mat-form-field appearance="fill"  class="converter__box">
+    <input
+      matInput
+      type="number"
+      [value]="value2"
+      (keyup)="getValueSecond($event.target)"
+      (change)="getValueSecond($event.target)"
+      [disabled]="rate2 === 0"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="converter__box">
+    <mat-label>Choose currency</mat-label>
+    <mat-select (selectionChange)="currencySecond($event)">
+      <mat-option [value]="currency.rate" *ngFor="let currency of currencies">
+        {{ currency.txt }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</article>
