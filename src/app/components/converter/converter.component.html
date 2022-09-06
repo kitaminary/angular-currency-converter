@@ -7,6 +7,7 @@
       (keyup)="getValue($event.target)"
       (change)="getValue($event.target)"
       [disabled]="rate1 === 0"
+      min="0"
     />
   </mat-form-field>
   <mat-form-field appearance="fill" class="converter__box">
@@ -37,6 +38,7 @@
       (keyup)="getValueSecond($event.target)"
       (change)="getValueSecond($event.target)"
       [disabled]="rate2 === 0"
+      min="0"
     />
   </mat-form-field>
   <mat-form-field appearance="fill" class="converter__box">

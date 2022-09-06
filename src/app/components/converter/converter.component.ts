@@ -23,12 +23,13 @@ export class ConverterComponent implements OnChanges {
   };
   currency = (event: any) => {
     this.rate1 = event.value;
-    this.value2 = +((event.value * this.value1) / this.rate2).toFixed(2) || 0;
+    this.value2 = +((event.value * this.value1) / this.rate2).toFixed(2) || NaN;
+    ;
   };
 
   currencySecond = (event: any) => {
     this.rate2 = event.value;
-    this.value1 = +((event.value * this.value2) / this.rate1).toFixed(2) || 0;
+    this.value1 = +((event.value * this.value2) / this.rate1).toFixed(2) || NaN;
   };
 
   ngOnChanges(changes: SimpleChanges): void {}
