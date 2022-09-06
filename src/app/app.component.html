@@ -1,8 +1,11 @@
 <main class="main">
   <h1 class="main__title">Currency converter</h1>
-  <p><i>Exchange date: {{ date }}</i></p>
-  <article class="rate">
-    <p class="rate__title">Сurrent rate UAH to</p>
+
+  <header class="rate">
+      <p>
+        <i>Exchange date: {{ date }}</i>
+      </p>
+    <p class="rate__title">Сurrent rate UAH to:</p>
     <div>
       <p *ngIf="currentUSD !== null">
         {{ currentUSD.cc }} - {{ currentUSD.rate }}
@@ -11,6 +14,6 @@
         {{ currentEUR.cc }} - {{ currentEUR.rate }}
       </p>
     </div>
-  </article>
+  </header>
   <app-converter class="converter" [currencies]="currencies"></app-converter>
 </main>
